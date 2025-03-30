@@ -52,18 +52,36 @@
     footer{
       width: 410px;
       height: 40vh;
+      margin-top: 20px;
     }
     #profile {
       height: 60vh;
       margin-bottom: 0;
     }
+    .prof{
+      font-size: 40px;
+      text-align: center;
+    }
     #about{
       padding-top: 0px;
       bottom: auto;
     }
+    #about .title{
+      padding-top: 100px;
+    }
+    #experience .title{
+      padding-top: 100px;
+    }
+    #projects .title{
+      padding-top: 100px;
+    }
     #services{
       padding-top: 0px;
       padding-bottom: 0px;
+    }
+    #projects{
+      margin-right: 20px;
+      margin-left: 20px;
     }
     article {
       font-size: 1rem;
@@ -83,7 +101,7 @@
     .contact-input{
       width: 80vw;
     }
-    .contact-right {
+    .contact-right{
       display: none;
     }
     .contact-container {
