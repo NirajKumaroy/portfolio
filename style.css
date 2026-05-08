@@ -547,6 +547,26 @@ article .icon {
   cursor: default;
 }
 
+/* CERTIFICATE SECTION */
+
+#certificate {
+  position: relative;
+}
+
+.certificate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.certificate-img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* PROJECTS SECTION */
 
 #projects{
