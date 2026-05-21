@@ -376,6 +376,8 @@ a.btn3 {
 
 .btn-color-1:hover {
   background: rgb(0, 0, 0);
+  color: #ff4321;
+  border: rgb(255, 67, 33) 0.1rem solid;
 }
 
 .btn-color-2 {
