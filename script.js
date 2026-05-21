@@ -19,22 +19,38 @@ let typed = new Typed("#element", {
   typeSpeed: 30,
 });
 
-const beeModel = document.getElementById("bee-model");
+const robotModel = document.getElementById("robot-model");
 const sections = Array.from(document.querySelectorAll("section"));
-//[0, -25, 0, 25, -20, 0];
-// 6 values perfectly matched to the 6 sections in your HTML
-const shiftPositions = [0, -25, 0, 25, -20, 0];
+
+// Desktop shifts (X and Y)
+// X: 0 = Right side, -100 = Left side
+// Y: 0 = Top, positive = move down (percent of viewport)
+const shiftPositionsXDesktop = [0, -100, 0, -100, 0, -100, -50];
+const shiftPositionsYDesktop = [0, 0, 0, 0, 0, 0, 0]; // Keep it vertically centered on desktop
+
+// Mobile shifts (X and Y)
+// X: 0 = Bottom-Right corner. Move negative to slide left.
+// Y: 0 = Bottom-Right corner. Move negative to slide UP.
+const shiftPositionsXMobile = [0, -100, 0, -100, 0, -100, -50];
+const shiftPositionsYMobile = [0, -50, 0, -50, 0, -50, -25]; // Weave up and down while moving left/right
+
 const cameraOrbits = [
-  [-45, 90], // Profile (Section 1)
-  [-45, 90], // About
-  [-180, 0], // Services
-  [45, 90], // Experience
-  [-40, 90], // Projects
-  [-45, 90], // Contact
+  [-45, 90],  // Profile
+  [45, 90],   // About (look right)
+  [-180, 0],  // Services (top down)
+  [45, 90],   // Experience (look right)
+  [-45, 90],  // Certificate (look left)
+  [45, 90],   // Projects (look right)
+  [0, 90],    // Contact (centered)
 ];
 
-const sectionOffsets = sections.map((section) => section.offsetTop);
+let sectionOffsets = sections.map((section) => section.offsetTop);
 const lastSectionIndex = sections.length - 1;
+
+// Recalculate offsets on window resize for accurate scroll tracking
+window.addEventListener("resize", () => {
+  sectionOffsets = sections.map((section) => section.offsetTop);
+});
 
 /* Fixed interpolation math: multiply by progress, don't add it */
 const interpolate = (start, end, progress) => start + (end - start) * progress;
@@ -53,8 +69,11 @@ const getScrollProgress = (scrollY) => {
 };
 
 // Advanced Physics: Store target vs current positions for Lerping
-let targetShift = shiftPositions[0];
-let currentShift = shiftPositions[0];
+let targetShiftX = 0;
+let currentShiftX = 0;
+
+let targetShiftY = 0;
+let currentShiftY = 0;
 
 let targetOrbit = [...cameraOrbits[0]];
 let currentOrbit = [...cameraOrbits[0]];
@@ -63,10 +82,20 @@ window.addEventListener("scroll", () => {
   const ScrollProgress = getScrollProgress(window.scrollY);
   const sectionIndex = Math.floor(ScrollProgress);
   const sectionProgress = ScrollProgress - sectionIndex;
+  
+  const isMobile = window.innerWidth <= 768;
+  const shiftPositionsX = isMobile ? shiftPositionsXMobile : shiftPositionsXDesktop;
+  const shiftPositionsY = isMobile ? shiftPositionsYMobile : shiftPositionsYDesktop;
 
-  targetShift = interpolate(
-    shiftPositions[sectionIndex],
-    shiftPositions[sectionIndex + 1] ?? shiftPositions[sectionIndex],
+  targetShiftX = interpolate(
+    shiftPositionsX[sectionIndex],
+    shiftPositionsX[sectionIndex + 1] ?? shiftPositionsX[sectionIndex],
+    sectionProgress,
+  );
+  
+  targetShiftY = interpolate(
+    shiftPositionsY[sectionIndex],
+    shiftPositionsY[sectionIndex + 1] ?? shiftPositionsY[sectionIndex],
     sectionProgress,
   );
 
@@ -80,23 +109,26 @@ window.addEventListener("scroll", () => {
 });
 
 // Smooth Animation Loop
-const animateBee = () => {
+const animateRobot = () => {
   // Lerp (Linear Interpolation) for buttery smooth gliding
-  currentShift += (targetShift - currentShift) * 0.05;
+  currentShiftX += (targetShiftX - currentShiftX) * 0.05;
+  currentShiftY += (targetShiftY - currentShiftY) * 0.05;
   currentOrbit[0] += (targetOrbit[0] - currentOrbit[0]) * 0.05;
   currentOrbit[1] += (targetOrbit[1] - currentOrbit[1]) * 0.05;
 
-  beeModel.style.transform = `translateX(${currentShift}%)`;
-  beeModel.setAttribute(
-    "camera-orbit",
-    `${currentOrbit[0]}deg ${currentOrbit[1]}deg`,
-  );
+  if (robotModel) {
+    robotModel.style.transform = `translate(${currentShiftX}%, ${currentShiftY}%)`;
+    robotModel.setAttribute(
+      "camera-orbit",
+      `${currentOrbit[0]}deg ${currentOrbit[1]}deg`,
+    );
+  }
 
-  requestAnimationFrame(animateBee);
+  requestAnimationFrame(animateRobot);
 };
 
 // Start the animation loop
-animateBee();
+animateRobot();
 
 document.addEventListener("DOMContentLoaded", () => {
   const themeToggleDesktop = document.getElementById(

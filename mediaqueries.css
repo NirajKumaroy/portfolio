@@ -62,6 +62,12 @@
     }
     .contact-container {
       flex-direction: column;
+      height: auto;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .contact-left {
+      padding-bottom: 40px;
     }
     .contact-right img {
       width: 350px;
@@ -80,8 +86,12 @@
     .about-containers {
       flex-direction: column;
     }
-    #bee-model {
-      width: 100vw;
+    #robot-model {
+      width: 50vw; /* Make it smaller so it fits nicely in the corner */
+      height: 50vh;
+      top: auto; /* Remove top constraint */
+      bottom: 0; /* Anchor to bottom */
+      right: 0; /* Anchor to right */
     }
     .modal-content {
       width: 95%;
@@ -156,7 +166,10 @@
     }
     .contact-container {
       padding-top: 80px;
-      height: 55vh;
+      height: auto;
+      padding-bottom: 50px;
+    }
+    .contact-left {
       padding-bottom: 0px;
     }
     .contact-info-container p,
