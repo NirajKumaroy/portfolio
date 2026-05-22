@@ -78,7 +78,11 @@ nav {
 }
 
 .logo {
-  
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+
   font-size: 2rem;
 }
 
@@ -290,6 +294,19 @@ section {
   justify-content: center;
   margin-top: 1rem;
   gap: 1rem;
+}
+
+#socials-container img {
+  background: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+#socials-container img:hover {
+  transform: translateY(-3px);
+
 }
 
 /* ICONS */
