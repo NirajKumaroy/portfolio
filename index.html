@@ -109,8 +109,10 @@
             src="./assets/youtubeicon.png"
             alt="My youtube profile"
             class="icon"
-            
-            onclick="location.href = 'https://www.youtube.com/@aiCoderwithCoffee-10003M'"
+            onclick="
+              location.href =
+                'https://www.youtube.com/@aiCoderwithCoffee-10003M'
+            "
           />
         </div>
       </div>
@@ -409,13 +411,24 @@
     <section id="certificate">
       <h1 class="title">My <span>Certificate</span></h1>
       <div class="certificate-container">
-        <img
-          src="./assets/webdev.png"
-          alt="Certificate image"
-          class="certificate-img"
-        />
+        <div class="certificate-list">
+          <img
+            src="./assets/dataScienceNiraj.png"
+            alt="Certificate image"
+            class="certificate-img"
+          />
+          <img
+            src="./assets/pythonNiraj.png"
+            alt="Certificate image"
+            class="certificate-img"
+          />
+          <img
+            src="./assets/webdev.png"
+            alt="Certificate image"
+            class="certificate-img"
+          />
+        </div>
       </div>
-
     </section>
 
     <section id="projects">
@@ -424,7 +437,31 @@
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container color-container">
-            
+            <div class="article-container">
+              <img
+                src="./assets/chat.png"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Chat Application</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href = 'https://github.com/NirajKumaroy'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="openVideoModal('./assets/chat.mp4')"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
             <div class="article-container">
               <img
                 src="./assets/makhana.png"
@@ -457,7 +494,9 @@
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Blog Post Website</h2>
+            <h2 class="experience-sub-title project-title">
+              Blog Post Website
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -482,7 +521,9 @@
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">E-Commerce Website</h2>
+            <h2 class="experience-sub-title project-title">
+              E-Commerce Website
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -507,7 +548,9 @@
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Portfolio Website</h2>
+            <h2 class="experience-sub-title project-title">
+              Portfolio Website
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -532,7 +575,9 @@
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">E-Commerce Website</h2>
+            <h2 class="experience-sub-title project-title">
+              E-Commerce Website
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -546,7 +591,6 @@
               >
                 Live Demo
               </button>
-            
             </div>
           </div>
 
@@ -578,12 +622,93 @@
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/canday game.png"
+                src="./assets/Snake.png"
                 alt="Project 1"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Candy Crush Game</h2>
+            <h2 class="experience-sub-title project-title">Snake Game</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href = 'https://github.com/NirajKumaroy'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="openVideoModal('./assets/snakeVideo.mp4')"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/music3.png"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">
+              Music E-commerce website
+            </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href = 'https://github.com/NirajKumaroy'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="openVideoModal('./assets/muVideo.mp4')"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/Doctor.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">
+              Doctor Appointment App
+            </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href = 'https://github.com/NirajKumaroy'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="openVideoModal('./assets/doctor.mp4')"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/qrcode.png"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">
+              QR Code Generator
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -653,89 +778,14 @@
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/Snake.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Snake Game</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href = 'https://github.com/NirajKumaroy'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="openVideoModal('./assets/snakeVideo.mp4')"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/music3.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Music E-commerce website</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href = 'https://github.com/NirajKumaroy'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="openVideoModal('./assets/muVideo.mp4')"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/Doctor.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Doctor Appointment App</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href = 'https://github.com/NirajKumaroy'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="openVideoModal('./assets/doctor.mp4')"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-
-         
-
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
                 src="./assets/bubble.png"
                 alt="Project 2"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Bubble Shooter Game</h2>
+            <h2 class="experience-sub-title project-title">
+              Bubble Shooter Game
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -755,8 +805,33 @@
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/calculater.png"
+                src="./assets/canday game.png"
                 alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Candy Crush Game</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href = 'https://github.com/NirajKumaroy'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="openVideoModal('./assets/canday game.mp4')"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/calculater.png"
+                alt="Project 1"
                 class="project-img"
               />
             </div>
@@ -777,7 +852,34 @@
             </div>
           </div>
 
-           <div class="details-container color-container">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/space.png"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">
+              Space Invaders Game
+            </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href = 'https://github.com/NirajKumaroy'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="openVideoModal('./assets/space.mp4')"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
             <div class="article-container">
               <img
                 src="./assets/music.png"
@@ -801,9 +903,6 @@
               </button>
             </div>
           </div>
-
-
-
         </div>
       </div>
     </section>
@@ -908,10 +1007,11 @@
             <li>
               <a href="#"><i class="fa-brands fa-facebook"></i></a>
             </li>
-           
+
             <li>
-              <a href="https://www.instagram.com/nirajroy50/"><i class="fa-brands fa-square-instagram"></i></a>
-              
+              <a href="https://www.instagram.com/nirajroy50/"
+                ><i class="fa-brands fa-square-instagram"></i
+              ></a>
             </li>
           </ul>
         </div>

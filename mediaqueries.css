@@ -79,6 +79,16 @@
       width: 100%;
       margin-bottom: 1.5rem;
     }
+    #certificate {
+      min-height: 0;
+    }
+    .certificate-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .certificate-img {
+      height: 15rem;
+    }
   }
   
   /* Tablets Portrait and Large Mobile Devices */
@@ -142,6 +152,20 @@
     #projects{
       margin-right: 20px;
       margin-left: 20px;
+    }
+    #certificate {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    .certificate-list {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .certificate-img {
+      width: 100%;
+      max-width: 22rem;
+      height: auto;
+      max-height: 15rem;
     }
     article {
       font-size: 1rem;

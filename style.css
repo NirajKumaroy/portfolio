@@ -568,7 +568,19 @@ article .icon {
 
 #certificate {
   position: relative;
+  height: auto;
+  min-height: 96vh;
 }
+
+.certificate-list {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 
 .certificate-container {
   display: flex;
@@ -578,8 +590,11 @@ article .icon {
 }
 
 .certificate-img {
-  max-width: 80%;
-  height: auto;
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 20rem;
+  object-fit: contain;
   border-radius: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
